@@ -1,10 +1,10 @@
 kind: pipeline
 name: nodeapp
 steps:
-  # - name: build
-  #   image: node:latest
-  #   commands:
-  #     - npm install
+  - name: build
+    image: node:latest
+    commands:
+      - npm install
 
   - name: publish
     image: plugins/gcr
