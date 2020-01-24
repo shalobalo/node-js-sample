@@ -36,7 +36,7 @@ steps:
 
 trigger:
   branch:
-    - master
+    - test_branch
   event:
     include:
     - push
