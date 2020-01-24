@@ -35,7 +35,8 @@ steps:
 #         target: TOKEN
 
 trigger:
+  branch:
+    - master
   event:
     include:
     - push
-    - pull_request
