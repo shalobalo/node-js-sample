@@ -31,3 +31,9 @@ steps:
     secrets:
       - source: GOOGLE_SERVICE_KEY
         target: TOKEN
+
+trigger:
+  event:
+    include:
+    - push
+    - pull_request
