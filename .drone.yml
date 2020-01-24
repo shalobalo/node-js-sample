@@ -34,8 +34,8 @@ steps:
 #       - source: GOOGLE_CREDENTIALS
 #         target: TOKEN
 
-# trigger:
-#   event:
-#     include:
-#     - push
-#     - pull_request
+trigger:
+  event:
+    include:
+    - push
+    - pull_request
