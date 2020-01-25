@@ -15,7 +15,7 @@ steps:
         from_secret: google_credentials
 
   - name: deploy
-    image: nytimes/drone-gke
+    image: nytimes/drone-gke:0.9.1
     region: us-east1
     zone: us-east1-b
     project: project-one-266117
