@@ -17,6 +17,7 @@ steps:
   - name: deploy
     image: nytimes/drone-gke
     region: us-east1
+    zone: us-east1-b
     project: project-one-266117
     namespace: ${DRONE_BRANCH}
     cluster: mykubecluster
@@ -30,6 +31,8 @@ steps:
     environment:
       TOKEN:
         from_secret: google_credentials
+      ZONE: us-east1-b
+      REGION: us-east1
 
 trigger:
   branch:
