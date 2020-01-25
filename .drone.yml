@@ -29,6 +29,8 @@ steps:
       env: dev
       user: root
     environment:
+      zone: "us-east1-b"
+      region: "us-east1"
       TOKEN:
         from_secret: google_credentials
 
