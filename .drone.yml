@@ -16,10 +16,6 @@ steps:
 
   - name: deploy
     image: nytimes/drone-gke
-    zone: us-east1-b
-    verbose: true
-    cluster: mykubecluster
-    project: project-one-266117
     vars:
       image: gcr.io/project-one-266117/nodeapp:${DRONE_COMMIT}
       app: nodeapp
@@ -28,6 +24,10 @@ steps:
     environment:
       TOKEN:
         from_secret: google_credentials
+      PLUGIN_ZONE: us-east1-b
+      PLUGIN_VERBOSE: true
+      PLUGIN_CLUSTER: mykubecluster
+      PLUGIN_PROJECT: project-one-266117
 
 trigger:
   branch:
