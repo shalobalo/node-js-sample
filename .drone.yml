@@ -24,7 +24,7 @@ steps:
       PLUGIN_VERBOSE: true
       PLUGIN_CLUSTER: mykubecluster
       PLUGIN_PROJECT: project-one-266117
-      PLUGIN_VARS: '{"app": "nodeapp","env": "dev","image": "gcr.io/project-one-266117/nodeapp:latest","user": "root"}'
+      PLUGIN_VARS: '{"app": "nodeapp","env": "dev","image": "gcr.io/project-one-266117/nodeapp:${DRONE_COMMIT}","user": "root"}'
 
 trigger:
   branch:
