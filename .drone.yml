@@ -8,9 +8,8 @@ steps:
 
   - name: publish
     image: plugins/gcr
-    tag: ${DRONE_COMMIT}
     settings:
-      repo: gcr.io/project-one-266117/nodeapp
+      repo: gcr.io/project-one-266117/nodeapp:${DRONE_COMMIT}
       json_key:
         from_secret: google_credentials
 
