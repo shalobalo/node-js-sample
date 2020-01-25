@@ -5,7 +5,7 @@ app.set('port', (process.env.PORT || 5000))
 app.use(express.static(__dirname + '/public'))
 
 app.get('/', function(request, response) {
-  response.send('Hello World! Redeployed!')
+  response.send('Hello World! I'm running on GKE Cluster!')
 })
 
 app.listen(app.get('port'), function() {
