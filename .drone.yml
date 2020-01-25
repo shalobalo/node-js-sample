@@ -12,10 +12,6 @@ steps:
       repo: gcr.io/project-one-266117/nodeapp
     json_key:
       from_secret: google_credentials
-    secrets:
-      - source: json_key
-        target: json_key
-
 
 #   - name: deploy
 #     image: nytimes/drone-gke
@@ -40,3 +36,4 @@ trigger:
   event:
     include:
     - push
+
