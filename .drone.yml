@@ -8,6 +8,7 @@ steps:
 
   - name: publish
     image: plugins/gcr
+    tag: ${DRONE_COMMIT}
     settings:
       repo: gcr.io/project-one-266117/nodeapp
       json_key:
@@ -16,19 +17,20 @@ steps:
   - name: deploy
     image: nytimes/drone-gke
     project: project-one-266117
+    namespace: ${DRONE_BRANCH}
     zone: us-east1-b
     region: us-east1
     cluster: mykubecluster
     expand_env_vars: true
     verbose: true
     vars:
-      image: gcr.io/project-one-266117/nodeapp:latest
+      image: gcr.io/project-one-266117/nodeapp:${DRONE_COMMIT}
       app: nodeapp
       env: dev
       user: root
     secrets:
-      - source: google_credentials
-        target: TOKEN
+    - source: google_credentials
+      target: token
 
 trigger:
   branch:
