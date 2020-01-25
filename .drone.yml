@@ -16,8 +16,6 @@ steps:
 
   - name: deploy
     image: nytimes/drone-gke:0.9.1
-    project: project-one-266117
-    cluster: mykubecluster
     expand_env_vars: true
     verbose: true
     vars:
@@ -30,6 +28,8 @@ steps:
         from_secret: google_credentials
       PLUGIN_ZONE: us-east1-b
       PLUGIN_VERBOSE: true
+      PLUGIN_CLUSTER: mykubecluster
+      PLUGIN_PROJECT: project-one-266117
 
 trigger:
   branch:
