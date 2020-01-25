@@ -29,7 +29,7 @@ steps:
       TOKEN:
         from_secret: google_credentials
       PLUGIN_ZONE: us-east1-b
-      PLUGIN_REGION: us-east1
+      PLUGIN_VERBOSE: true
 
 trigger:
   branch:
