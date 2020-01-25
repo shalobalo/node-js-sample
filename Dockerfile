@@ -1,9 +1,11 @@
-FROM node:8
+FROM node:latest
 
 # Create app directory
 WORKDIR /node-js-sample
+RUN pwd
+RUN ls -la
 
-COPY /drone/src/ ./
+COPY /drone/src/ /node-js-sample
 
 RUN pwd
 
