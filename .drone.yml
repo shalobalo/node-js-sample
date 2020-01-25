@@ -13,22 +13,22 @@ steps:
       json_key:
         from_secret: google_credentials
 
-#   - name: deploy
-#     image: nytimes/drone-gke
-#     project: project-one-266117
-#     zone: us-east1-b
-#     region: us-east1
-#     cluster: mykubecluster
-#     expand_env_vars: true
-#     verbose: true
-#     vars:
-#       image: gcr.io/project-one-266117/nodeapp:latest
-#       app: nodeapp
-#       env: dev
-#       user: root
-#     secrets:
-#       - source: google_credentials
-#         target: TOKEN
+  - name: deploy
+    image: nytimes/drone-gke
+    project: project-one-266117
+    zone: us-east1-b
+    region: us-east1
+    cluster: mykubecluster
+    expand_env_vars: true
+    verbose: true
+    vars:
+      image: gcr.io/project-one-266117/nodeapp:latest
+      app: nodeapp
+      env: dev
+      user: root
+    secrets:
+      - source: google_credentials
+        target: TOKEN
 
 trigger:
   branch:
