@@ -7,6 +7,10 @@ metadata:
 
 spec:
   replicas: 1
+  selector:
+    matchLabels:
+      app: {{.app}}
+      env: {{.env}}
   template:
     metadata:
       labels:
@@ -23,5 +27,3 @@ spec:
               value: {{.app}}
             - name: USER
               value: {{.user}}
-
-
