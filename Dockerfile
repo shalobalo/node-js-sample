@@ -2,12 +2,8 @@ FROM node:latest
 
 # Create app directory
 WORKDIR /node-js-sample
-RUN pwd
-RUN ls -la
 
-COPY /drone/src/ /node-js-sample
-
-RUN pwd
+COPY ./ /node-js-sample
 
 RUN npm install
 
