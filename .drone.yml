@@ -17,11 +17,6 @@ steps:
   - name: deploy
     image: nytimes/drone-gke
     expand_env_vars: true
-    vars:
-      image: gcr.io/project-one-266117/nodeapp:${DRONE_COMMIT}
-      app: nodeapp
-      env: dev
-      user: root
     environment:
       TOKEN:
         from_secret: google_credentials
@@ -29,11 +24,7 @@ steps:
       PLUGIN_VERBOSE: true
       PLUGIN_CLUSTER: mykubecluster
       PLUGIN_PROJECT: project-one-266117
-      PLUGIN_VARS: 
-        image: gcr.io/project-one-266117/nodeapp:${DRONE_COMMIT}
-        app: nodeapp
-        env: dev
-        user: root
+      PLUGIN_VARS: '{"app": "nodeapp","env": "dev","image": "gcr.io/project-one-266117/nodeapp:latest","user": "root"}'
 
 trigger:
   branch:
