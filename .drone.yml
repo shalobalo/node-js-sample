@@ -10,8 +10,8 @@ steps:
     image: plugins/gcr
     settings:
       repo: gcr.io/project-one-266117/nodeapp
-    json_key:
-      from_secret: google_credentials
+      json_key:
+        from_secret: google_credentials
 
 #   - name: deploy
 #     image: nytimes/drone-gke
@@ -27,7 +27,7 @@ steps:
 #       env: dev
 #       user: root
 #     secrets:
-#       - source: GOOGLE_CREDENTIALS
+#       - source: google_credentials
 #         target: TOKEN
 
 trigger:
