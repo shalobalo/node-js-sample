@@ -28,11 +28,10 @@ steps:
       app: nodeapp
       env: dev
       user: root
-    settings:
-      token:
+    environment:
+      TOKEN:
         from_secret: google_credentials
-      wait_seconds: 60
-      expand_env_vars: true
+
 trigger:
   branch:
     - test_branch
